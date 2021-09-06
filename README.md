@@ -17,6 +17,8 @@
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/m/abnerwei/hexo-url-submission.svg)
 ![GitHub contributors](https://img.shields.io/github/contributors/abnerwei/hexo-url-submission.svg)
 
+[![NPM](https://nodei.co/npm/hexo-url-submission.png)](https://nodei.co/npm/hexo-url-submission/)
+
 ## Roadmap
 [Roadmap, plan, milestone](https://github.com/abnerwei/hexo-url-submission/projects/1)
 
