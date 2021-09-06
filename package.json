@@ -1,0 +1,46 @@
+{
+  "name": "hexo-url-submission",
+  "version": "1.0.0",
+  "description": "Submit website url to search engines.",
+  "main": "git ",
+  "scripts": {
+    "eslint": "eslint .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "directories": {
+    "lib": "./lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/abnerwei/hexo-url-submission.git"
+  },
+  "homepage": "https://abnerwei.com/",
+  "keywords": [
+    "seo",
+    "bing",
+    "google",
+    "baidu",
+    "hexo",
+    "abnerwei",
+    "deployer",
+    "hexo",
+    "url",
+    "submission"
+  ],
+  "author": {
+    "name": "Abnerwei",
+    "url": "https://abnerwei.com/",
+    "email": "abnerwei@vip.qq.com"
+  },
+  "maintainers": [
+    "Abnerwei <abnerwei@vip.qq.com> (https://abnerwei.com)"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "googleapis": "^85.0.0"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": ">=10.13.0"
+  }
+}
