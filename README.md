@@ -23,7 +23,7 @@
 [Roadmap, plan, milestone](https://github.com/abnerwei/hexo-url-submission/projects/1)
 
 ## Documentation
-[Read More](https://abnerwei.com/wiki/url-submission/)
+[Read More](https://abnerwei.com/wiki/hexo/url-submission/)
 
 ## Donate
 
