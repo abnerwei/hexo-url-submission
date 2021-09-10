@@ -63,7 +63,7 @@ yarn add hexo-url-submission
 url_submission:
    enable: true
    type: 'latest' # latest or all( latest: modified pages; all: posts & pages)
-   channel: ['baidu', 'bing', 'google'] # Included channels are `baidu`, `google`, `bing`
+   channel: ['baidu', 'bing', 'google', 'shenma'] # Included channels are `baidu`, `google`, `bing`, `shenma`
    prefix: ['/post', '/wiki'] # URL prefix
    count: 10 # Submit limit
    proxy: '' # Set the proxy used to submit urls to Google
