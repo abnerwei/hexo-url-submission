@@ -27,13 +27,19 @@
 
 ## Donate
 
-Hexo-URL-Submssion is used to submit site URLs to major search engines, including Google, Bing, and Baidu, to improve the speed and quality of sites included in search engines.
+Hexo-URL-Submssion is used to submit site URLs to major search engines, including Google, Bing, ShenMa and Baidu, to improve the speed and quality of sites included in search engines.
 
 These three major search engines have occupied 98% of the global search engine market share (except Yandex Ru). Later, I will support api submission for more search engines.
 
 As of August 2021, Google: 92.05%, Bing: 2.45%, Yahoo!: 1.5%, Baidu: 1.39%, Yandex: 1.21%, DuckDuckGo: 0.63%.
 
 In China, [Baidu](https://baidu.com), [360](https://so.com), [Shenma](https://m.sm.cn/) (only app), [Toutiao](https://www.toutiao.com/), [Sogou](https://www.sogou.com/) and other search engines occupy a dominant position
+
+
+## Version record
+- v1.0.0 feat: Support Baidu, Google, Bing url batch submission
+- v1.0.1 fix(bing_deployer): local variables overwrite global variables and cause data errors 
+- v1.0.2 feat(shenma): Support ShenMa Search Engine
 
 ## Quick start
 
@@ -65,6 +71,8 @@ url_submission:
    baidu_token: '' # Baidu private key
    bing_token: '' # Bing private key
    google_key: '' # Google key path (e.g. `google_key.json` or `data/google_key.json`)
+   shenma_token: ''
+   shenma_user: '' # ShenMa user_name
    sitemap: '' # Sitemap path(e.g. the url is like this https://abnerwei.com/baidusitemap.xml, you can fill in `baidusitemap.xml`)
 ```
 
@@ -74,6 +82,7 @@ deploy:
   - type: us_baidu_deployer
   - type: us_bing_deployer
   - type: us_google_deployer
+  - type: us_shenma_deployer
 ```
 
 ### 3. good job
@@ -97,4 +106,8 @@ INFO  Deploying: us_google_deployer
 INFO  submission_url: Submitting urls to google engine...
 INFO  Deploy done: ws_google_deployer
 INFO  submission_url: Submit to google engine success
+INFO  Deploying: us_shenma_deployer
+INFO  submission_url: Submitting urls to shenma engine...
+INFO  Deploy done: ws_shenma_deployer
+INFO  submission_url: Submit to shenma engine success
 ```
