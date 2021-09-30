@@ -1,6 +1,6 @@
 {
   "name": "hexo-url-submission",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Submit website url to search engines.",
   "main": "git ",
   "scripts": {
@@ -37,7 +37,8 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "googleapis": "^85.0.0"
+    "googleapis": "^87.0.0",
+    "request": "^2.88.2"
   },
   "devDependencies": {},
   "engines": {
