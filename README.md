@@ -41,6 +41,7 @@ In China, [Baidu](https://baidu.com), [360](https://so.com), [Shenma](https://m.
 - v1.0.1 fix(bing_deployer): local variables overwrite global variables and cause data errors 
 - v1.0.2 feat(shenma): Support ShenMa Search Engine
 - v1.0.3 improve(dep): improve package dep
+- v1.0.4 improve(dep): remove deprecated dep
 
 ## Quick start
 
