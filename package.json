@@ -37,7 +37,8 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "googleapis": "^87.0.0"
+    "googleapis": "^87.0.0",
+    "request": "^2.88.2"
   },
   "devDependencies": {},
   "engines": {
