@@ -28,19 +28,19 @@
     "submission"
   ],
   "author": {
-    "name": "Abnerwei",
+    "name": "Doctor.Wei",
     "url": "https://abnerwei.com/",
     "email": "abnerwei@vip.qq.com"
   },
   "maintainers": [
-    "Abnerwei <abnerwei@vip.qq.com> (https://abnerwei.com)"
+    "Doctor.Wei <abnerwei@vip.qq.com> (https://abnerwei.com)"
   ],
   "license": "MIT",
   "dependencies": {
+    "axios": "^0.24.0",
     "googleapis": "^87.0.0",
-    "request": "^2.88.2"
+    "https-proxy-agent": "^5.0.0"
   },
-  "devDependencies": {},
   "engines": {
     "node": ">=10.13.0"
   }
