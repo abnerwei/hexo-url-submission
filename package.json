@@ -2,7 +2,7 @@
   "name": "hexo-url-submission",
   "version": "1.0.6",
   "description": "Submit website url to search engines.",
-  "main": "index",
+  "main": "index.js",
   "scripts": {
     "eslint": "eslint .",
     "test": "echo \"Error: no test specified\" && exit 1"
