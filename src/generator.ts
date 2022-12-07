@@ -35,7 +35,7 @@ export default (locals: Hexo.Site, hexo: Hexo): Hexo.extend.Generator.Return => 
       })
     } catch (error: any) {
       log.error(projectPrefix.concat("Read file meta failed, error is: ", error.message))
-      urls = []
+      return { path: '', data: '' }
     }
   }
   let urlsMap = urls.map(post => post.permalink).join('\n')
