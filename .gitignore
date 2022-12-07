@@ -39,5 +39,5 @@ jspm_packages
 # intellij
 
 .idea
-
-yarn.lock
+lib/*
+tsconfig.tsbuildinfo

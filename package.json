@@ -1,14 +1,12 @@
 {
   "name": "hexo-url-submission",
-  "version": "1.0.9",
+  "version": "2.0.0-beta.0",
   "description": "Submit website url to search engines.",
-  "main": "index.js",
+  "main": "./lib/index.js",
   "scripts": {
+    "build": "tsc -p tsconfig.json",
     "eslint": "eslint .",
     "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "directories": {
-    "lib": "./lib"
   },
   "repository": {
     "type": "git",
@@ -37,9 +35,12 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "axios": "^0.24.0",
-    "googleapis": "^87.0.0",
+    "axios": "^1.2.0",
+    "googleapis": "^109.0.0",
     "https-proxy-agent": "^5.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.10"
   },
   "engines": {
     "node": ">=10.13.0"
