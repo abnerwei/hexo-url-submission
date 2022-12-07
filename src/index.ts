@@ -23,7 +23,7 @@ hexo.config.url_submission = Object.assign({
 const pluginConfig = hexo.config.url_submission
 
 if (pluginConfig?.enable) {
-  hexo.extend.generator.register('us_url_generator', (locals: Hexo.Site) => {
+  hexo.extend.generator.register('submission_generator', (locals: Hexo.Site) => {
     return generator(locals, hexo)
   }) // generator
   hexo.extend.deployer.register('url_submission', async (args: Hexo.extend.Deployer.Config) => {

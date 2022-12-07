@@ -1,6 +1,6 @@
 {
   "name": "hexo-url-submission",
-  "version": "2.0.0-beta.0",
+  "version": "2.0.0-beta.3",
   "description": "Submit website url to search engines.",
   "main": "./lib/index.js",
   "scripts": {
@@ -8,6 +8,7 @@
     "eslint": "eslint .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "documention": "https://abnerwei.com/wiki/hexo/url-submission/",
   "repository": {
     "type": "git",
     "url": "https://github.com/abnerwei/hexo-url-submission.git"
