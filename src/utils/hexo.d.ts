@@ -1,6 +1,7 @@
 // Type definitions for hexo 3.8
 // Project: https://hexo.io/
 // Origin Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
+// Optimized By Abnerwei
 // TypeScript Version: 3.0
 
 import { EventEmitter } from 'events';
