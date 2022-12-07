@@ -1,6 +1,6 @@
 {
   "name": "hexo-url-submission",
-  "version": "2.0.0-beta.2",
+  "version": "2.0.0-beta.3",
   "description": "Submit website url to search engines.",
   "main": "./lib/index.js",
   "scripts": {
