@@ -5,19 +5,14 @@ import generator from './generator';
 
 hexo.config.url_submission = Object.assign({
   enable: true,
-  type: 'latest', // latest or all( latest: modified pages; all: posts & pages)
-  prefix: ['post', 'wiki'],
-  ignore: ['/post/aeebbcec/', '/post/a*'],
-  channels: { // included channels are `baidu`, `google`, `bing`, `shenma`
-    baidu: { count: 10, token: '' },
-    bing: { count: 10, token: '' },
-    shenma: { count: 10, user: '', token: '' },
-    google: { count: 10, key: '' },
-  },
-  count: 10,
+  type: 'all',
+  prefix: ['post'],
+  ignore: [],
+  channels: {},
+  count: 100,
   proxy: '',
-  urls_path: 'submit_url.txt', // the file wait for submission
-  sitemap: '' // whereis it
+  urls_path: 'submit_url.txt',
+  sitemap: 'sitemap.xml'
 }, hexo.config.url_submission)
 
 const pluginConfig = hexo.config.url_submission

@@ -1,5 +1,5 @@
 import pathFn from 'path'
-import { google, Auth as googleAuth } from 'googleapis'
+import { JWT as googleOauth, Credentials as googleAuthCredentials } from 'google-auth-library'
 import Axios from 'axios'
 import HttpsProxyAgent from "https-proxy-agent"
 
@@ -61,11 +61,11 @@ export const deployer = async (args: Hexo) => {
       body
   })
 
-  let tokens: googleAuth.Credentials | undefined = {}
+  let tokens: googleAuthCredentials | undefined = {}
 
   try {
     // Part.1 Indexing API
-    const jwtClient = new google.auth.JWT(
+    const jwtClient = new googleOauth(
       parsedGoogleKey.client_email,
       undefined,
       parsedGoogleKey.private_key,
@@ -125,9 +125,9 @@ const randomRangeNumber = (minNumber: number, maxNumber: number) => {
   return minNumber + Math.round(random * range)
 }
 
-const authorize = (jwtClient: googleAuth.JWT) => {
-  return new Promise<googleAuth.Credentials | undefined>((resolve, reject) => {
-    jwtClient.authorize((err: Error | null, tokens?: googleAuth.Credentials) => {
+const authorize = (jwtClient: googleOauth) => {
+  return new Promise<googleAuthCredentials | undefined>((resolve, reject) => {
+    jwtClient.authorize((err: Error | null, tokens?: googleAuthCredentials) => {
       if (err !== null) return reject(err)
       resolve(tokens)
     })

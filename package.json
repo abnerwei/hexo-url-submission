@@ -1,6 +1,6 @@
 {
   "name": "hexo-url-submission",
-  "version": "2.0.0-beta.3",
+  "version": "2.0.0-beta.4",
   "description": "Submit website url to search engines.",
   "main": "./lib/index.js",
   "scripts": {
@@ -37,7 +37,7 @@
   "license": "MIT",
   "dependencies": {
     "axios": "^1.2.0",
-    "googleapis": "^109.0.0",
+    "google-auth-library": "^8.7.0",
     "https-proxy-agent": "^5.0.0"
   },
   "devDependencies": {
