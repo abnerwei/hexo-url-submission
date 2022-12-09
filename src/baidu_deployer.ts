@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 import Hexo from './utils/hexo'
-import { projectPrefix } from './utils/utils'
+import { projectPrefix, defaultTimeOut } from './utils/utils'
 
 export const deployer = async (args: Hexo) => {
   const { config, log } = args
@@ -10,6 +10,8 @@ export const deployer = async (args: Hexo) => {
   let { token, count } = url_submission.channels?.baidu
   token = token || process.env.BAIDU_TOKEN
   const logPrefix = projectPrefix.concat('(\x1b[3mbaidu\x1b[23m) ')
+  axios.defaults.timeout = defaultTimeOut
+
   if (count === undefined) {
     log.warn(logPrefix.concat("The number of submitted entries for Baidu Search is not set, and the default value will be used for submission."))
   }

@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 import Hexo from './utils/hexo'
-import { projectPrefix } from './utils/utils'
+import { projectPrefix, defaultTimeOut } from './utils/utils'
 
 export const deployer = async (args: Hexo) => {
   const { config, log } = args
@@ -10,7 +10,9 @@ export const deployer = async (args: Hexo) => {
   let { token, count } = url_submission.channels?.bing
   token = token || process.env.BING_TOKEN
   const defaultQuota = 500
+  axios.defaults.timeout = defaultTimeOut
   const logPrefix = projectPrefix.concat('(\x1b[3mbing\x1b[23m) ')
+
   if (count === undefined) {
     log.warn(logPrefix.concat("The number of submitted entries for Bing Search is not set. Continue to detect the remaining quota or the default value will be used for submission."))
   }

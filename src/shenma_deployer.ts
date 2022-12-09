@@ -2,7 +2,7 @@ import axios from 'axios'
 import urlParser from 'url'
 
 import Hexo from './utils/hexo'
-import { projectPrefix } from './utils/utils'
+import { projectPrefix, defaultTimeOut } from './utils/utils'
 
 export const deployer = async (args: Hexo) => {
   const { config, log } = args
@@ -11,6 +11,7 @@ export const deployer = async (args: Hexo) => {
   let { user, token, count } = url_submission.channels?.shenma
   token = token || process.env.SHENMA_TOKEN
   const logPrefix = projectPrefix.concat('(\x1b[3mshenma\x1b[23m) ')
+  axios.defaults.timeout = defaultTimeOut
 
   if (count === undefined) {
     log.warn(logPrefix.concat("The number of submitted entries for ShenMa Search is not set, and the default value will be used for submission."))

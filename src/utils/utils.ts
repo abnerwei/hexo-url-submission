@@ -2,6 +2,7 @@ import pathFn from 'path'
 import fs from 'fs'
 
 export const projectPrefix = 'url_submission: '
+export const defaultTimeOut = 2000
 
 export const readFileSync = (publicDir: string, filePath: string) => {
   return fs.readFileSync(pathFn.join(publicDir, filePath), 'utf8')

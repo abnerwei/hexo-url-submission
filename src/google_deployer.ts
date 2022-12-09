@@ -5,13 +5,15 @@ import HttpsProxyAgent from "https-proxy-agent"
 
 import { GoogleKeys } from './utils/interface'
 import Hexo from './utils/hexo'
-import { projectPrefix } from './utils/utils'
+import { projectPrefix, defaultTimeOut } from './utils/utils'
 
 export const deployer = async (args: Hexo) => {
   const { config, log, base_dir } = args
   const { url_submission, url } = config
   const { urlArr, count: baseCount, sitemap, proxy } = url_submission
   let { key, count }: { key: string, count: number } = url_submission.channels?.google
+  Axios.defaults.timeout = defaultTimeOut
+
   const logPrefix = projectPrefix.concat('(\x1b[3mgoogle\x1b[23m) ')
 
   if (count === undefined) {
