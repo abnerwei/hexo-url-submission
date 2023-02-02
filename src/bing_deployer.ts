@@ -14,7 +14,7 @@ export const deployer = async (args: Hexo) => {
   const logPrefix = projectPrefix.concat('(\x1b[3mbing\x1b[23m) ')
 
   if (count === undefined) {
-    log.warn(logPrefix.concat("The number of submitted entries for Bing Search is not set. Continue to detect the remaining quota or the default value will be used for submission."))
+    log.info(logPrefix.concat("The number of submitted entries for Bing Search is not set. Continue to detect the remaining quota or the default value will be used for submission."))
   }
   count = count || baseCount
 

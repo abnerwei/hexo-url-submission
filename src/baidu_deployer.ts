@@ -13,7 +13,7 @@ export const deployer = async (args: Hexo) => {
   axios.defaults.timeout = defaultTimeOut
 
   if (count === undefined) {
-    log.warn(logPrefix.concat("The number of submitted entries for Baidu Search is not set, and the default value will be used for submission."))
+    log.info(logPrefix.concat("The number of submitted entries for Baidu Search is not set, and the default value will be used for submission."))
   }
   count = Math.min(count || baseCount, urlArr.length)
   log.warn(logPrefix.concat('The number of entries submitted by Baidu Search has been set to \x1b[1m', String(count), '\x1b[22m'))

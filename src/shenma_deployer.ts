@@ -14,7 +14,7 @@ export const deployer = async (args: Hexo) => {
   axios.defaults.timeout = defaultTimeOut
 
   if (count === undefined) {
-    log.warn(logPrefix.concat("The number of submitted entries for ShenMa Search is not set, and the default value will be used for submission."))
+    log.info(logPrefix.concat("The number of submitted entries for ShenMa Search is not set, and the default value will be used for submission."))
   }
   user = user || process.env.SHENMA_USER
   count = Math.min(count || baseCount, urlArr.length)

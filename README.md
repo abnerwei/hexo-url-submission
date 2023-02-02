@@ -42,6 +42,11 @@ In China, [Baidu](https://baidu.com), [360](https://so.com), [Shenma](https://m.
 - v1.0.2 feat(shenma): Support ShenMa Search Engine
 - v1.0.3 improve(dep): improve package dep
 - v1.0.4 improve(dep): remove deprecated dep
+- v1.0.5 optimize(deployer): optimized deployer
+- v1.0.6 optimize(dep): replace `request(deprecated)`
+- v1.0.7 fix: Nodejs16+ DEP API & hexo 6.1 bug
+- v1.0.9 optimize(google/bing): optimized google deployer 400, fixed bing deployer quote
+- ⭐️v2.0.0 refactor: Added support for `ignore` parameters and wildcards, Channel parameters under independent control[#7](https://github.com/abnerwei/hexo-url-submission/issues/7)
 
 ## Quick start
 
@@ -65,26 +70,31 @@ yarn add hexo-url-submission
 url_submission:
    enable: true
    type: 'latest' # latest or all( latest: modified pages; all: posts & pages)
-   channel: ['baidu', 'bing', 'google', 'shenma'] # Included channels are `baidu`, `google`, `bing`, `shenma`
+   channels: # included channels are `baidu`, `google`, `bing`, `shenma`
+     baidu:
+       token: "" # Baidu Private Token
+       count: 10 # Optional
+     bing:
+       token: "" # Bing Access Token
+       count: 10 # Optional
+     google:
+       key: "google.json" # Google key path (e.g. `google_key.json` or `data/google_key.json`)
+       count: 10 # Optional
+     shenma:
+       count: 10 # Optional
+       user: "" # Username used when registering
+       token: "" # ShenMa Private Key
    prefix: ['/post', '/wiki'] # URL prefix
+   ignore: ["/post/a*", "/post/a?c"] # URL addresses that do not need to be submitted (wildcards are supported)
    count: 10 # Submit limit
-   proxy: '' # Set the proxy used to submit urls to Google
    urls_path: 'submit_url.txt' # URL list file path
-   baidu_token: '' # Baidu private key
-   bing_token: '' # Bing private key
-   google_key: '' # Google key path (e.g. `google_key.json` or `data/google_key.json`)
-   shenma_token: ''
-   shenma_user: '' # ShenMa user_name
    sitemap: '' # Sitemap path(e.g. the url is like this https://abnerwei.com/baidusitemap.xml, you can fill in `baidusitemap.xml`)
 ```
 
 #### (2) deploy
 ```yaml
 deploy:
-  - type: us_baidu_deployer
-  - type: us_bing_deployer
-  - type: us_google_deployer
-  - type: us_shenma_deployer
+  - type: url_submission
 ```
 
 ### 3. good job
@@ -96,20 +106,24 @@ enjoy it!
 
 success response:
 ```shell
-INFO  Deploying: us_baidu_deployer
-INFO  submission_url: Submitting urls to baidu engine...
-INFO  Deploy done: ws_baidu_deployer
-INFO  submission_url: Submit to baidu engine: [ success: 32, remain: 2780 ]
-INFO  Deploying: us_bing_deployer
-INFO  submission_url: Submitting urls to bing engine...
-INFO  Deploy done: ws_bing_deployer
-INFO  submission_url: Submit to bing engine success
-INFO  Deploying: us_google_deployer
-INFO  submission_url: Submitting urls to google engine...
-INFO  Deploy done: ws_google_deployer
-INFO  submission_url: Submit to google engine success
-INFO  Deploying: us_shenma_deployer
-INFO  submission_url: Submitting urls to shenma engine...
-INFO  Deploy done: ws_shenma_deployer
-INFO  submission_url: Submit to shenma engine success
+INFO  Deploying: url_submission
+WARN  url_submission: (baidu) The number of submitted entries for Baidu Search is not set, and the default value will be used for submission.
+WARN  url_submission: (baidu) The number of entries submitted by Baidu Search has been set to 37
+INFO  url_submission: (baidu) Start submit urlList to baidu engine...
+INFO  url_submission: (baidu) Submit to baidu engine success: [success: 37, remain: 2963]
+WARN  url_submission: (bing) The number of submitted entries for Bing Search is not set. Continue to detect the remaining quota or the default value will be used for submission.
+WARN  url_submission: (bing) The number of entries submitted by Bing Search has been set to 37
+INFO  url_submission: (bing) Get bing engine remain, [daliy: 100, monthly: 2800]
+INFO  url_submission: (bing) Start submit urlList to bing engine...
+INFO  url_submission: (bing) Submit to bing engine success.
+WARN  url_submission: (google) The number of submitted entries for Google Search is not set, and the default value will be used for submission.
+WARN  url_submission: (google) The number of entries submitted by Google Search has been set to 37
+INFO  url_submission: (google) Start submit urlList to google engine...
+INFO  url_submission: (google) Submit to google engine success
+INFO  url_submission: (google) Google Sitemap Notification Received.
+WARN  url_submission: (shenma) The number of submitted entries for ShenMa Search is not set, and the default value will be used for submission.
+WARN  url_submission: (shenma) The number of entries submitted by ShenMa Search has been set to 37
+INFO  url_submission: (shenma) Start submit urlList to shenma engine...
+INFO  url_submission: (shenma) Submit to shenma engine failed: [token illegal]
+INFO  Deploy done: url_submission
 ```
