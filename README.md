@@ -22,9 +22,6 @@
 ## Roadmap
 [Roadmap, plan, milestone](https://github.com/abnerwei/hexo-url-submission/projects/1)
 
-## Documentation
-[Read More](https://abnerwei.com/wiki/hexo/url-submission/)
-
 ## Donate
 
 Hexo-URL-Submssion is used to submit site URLs to major search engines, including Google, Bing, ShenMa and Baidu, to improve the speed and quality of sites included in search engines.
