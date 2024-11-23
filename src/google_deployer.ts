@@ -2,6 +2,7 @@ import pathFn from 'path'
 import { JWT as googleOauth, Credentials as googleAuthCredentials } from 'google-auth-library'
 import Axios from 'axios'
 import HttpsProxyAgent from "https-proxy-agent"
+import fs from 'hexo-fs'
 
 import { GoogleKeys } from './utils/interface'
 import Hexo from './utils/hexo'
@@ -25,9 +26,15 @@ export const deployer = async (args: Hexo) => {
   let axios = Axios.create()
   let parsedGoogleKey: GoogleKeys
   try {
-    parsedGoogleKey = require(pathFn.join(base_dir, key)) || JSON.parse(process.env.GOOGLE_KEY || '{}')
-  } catch (error) {
+    let keyPath = pathFn.join(base_dir, key)
+    if (fs.existsSync(keyPath)) {
+      parsedGoogleKey = JSON.parse(fs.readFileSync(keyPath))
+    } else {
+      parsedGoogleKey = JSON.parse(process.env.GOOGLE_KEY || '{}')
+    }
+  } catch (error: any) {
     log.error(logPrefix.concat('Google key file not exist, cancel submission. '))
+    log.error(logPrefix.concat('Error: \x1b[31m', error.message, '\x1b[39m'))
     return
   }
 
