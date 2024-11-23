@@ -2,7 +2,7 @@ import pathFn from 'path'
 import { JWT as googleOauth, Credentials as googleAuthCredentials } from 'google-auth-library'
 import Axios from 'axios'
 import HttpsProxyAgent from "https-proxy-agent"
-import fs from 'hexo-fs'
+import * as fs from "hexo-fs"
 
 import { GoogleKeys } from './utils/interface'
 import Hexo from './utils/hexo'
@@ -27,7 +27,7 @@ export const deployer = async (args: Hexo) => {
   let parsedGoogleKey: GoogleKeys
   try {
     let keyPath = pathFn.join(base_dir, key)
-    if (fs.existsSync(keyPath)) {
+    if (fs.existsSync(keyPath) && fs.statSync(keyPath).isFile()) {
       parsedGoogleKey = JSON.parse(fs.readFileSync(keyPath))
     } else {
       parsedGoogleKey = JSON.parse(process.env.GOOGLE_KEY || '{}')
