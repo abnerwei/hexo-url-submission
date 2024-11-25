@@ -44,6 +44,7 @@ In China, [Baidu](https://baidu.com), [360](https://so.com), [Shenma](https://m.
 - v1.0.7 fix: Nodejs16+ DEP API & hexo 6.1 bug
 - v1.0.9 optimize(google/bing): optimized google deployer 400, fixed bing deployer quote
 - ⭐️v2.0.0 refactor: Added support for `ignore` parameters and wildcards, Channel parameters under independent control[#7](https://github.com/abnerwei/hexo-url-submission/issues/7)
+- v2.0.1 fix: use hexo-fs to read google key file instead of require [#18](https://github.com/abnerwei/hexo-url-submission/pull/18)
 
 ## Quick start
 
