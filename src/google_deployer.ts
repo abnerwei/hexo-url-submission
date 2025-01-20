@@ -112,22 +112,6 @@ export const deployer = async (args: Hexo) => {
     log.error(logPrefix.concat('Submit to google engine error: \x1b[31m', error, '\x1b[39m'))
   }
 
-  try {
-    // Part.2 Google Ping https://www.google.com/ping?sitemap=
-    let sitemap_options = {
-      url: '/ping?sitemap='.concat(url.concat('/', sitemap)),
-      baseURL: 'https://www.google.com'
-    }
-
-    let response = await axios.request(sitemap_options)
-    if (response.status === 200) {
-      log.info(logPrefix.concat("Google Sitemap Notification Received."))
-    }
-  } catch (error: any) {
-    log.error(logPrefix.concat('Submit to google sitmap engine error: \x1b[31m', error.message, '\x1b[39m'))
-  }
-}
-
 const randomRangeNumber = (minNumber: number, maxNumber: number) => {
   let range = maxNumber - minNumber
   let random = Math.random()
