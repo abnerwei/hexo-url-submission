@@ -118,7 +118,6 @@ WARN  url_submission: (google) The number of submitted entries for Google Search
 WARN  url_submission: (google) The number of entries submitted by Google Search has been set to 37
 INFO  url_submission: (google) Start submit urlList to google engine...
 INFO  url_submission: (google) Submit to google engine success
-INFO  url_submission: (google) Google Sitemap Notification Received.
 WARN  url_submission: (shenma) The number of submitted entries for ShenMa Search is not set, and the default value will be used for submission.
 WARN  url_submission: (shenma) The number of entries submitted by ShenMa Search has been set to 37
 INFO  url_submission: (shenma) Start submit urlList to shenma engine...
