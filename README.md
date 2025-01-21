@@ -64,6 +64,9 @@ yarn add hexo-url-submission
 
 > You can use environment variables in your local or CI/CD tools to safely store tokens
 
+> [!TIP]
+> The default value of `type` is `latest`, which means that only the pages modified the same day will be submitted. If you want to submit all pages, you can set `type` to `all`.
+
 ```yaml
 url_submission:
    enable: true
