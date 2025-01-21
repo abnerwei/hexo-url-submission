@@ -67,6 +67,7 @@ yarn add hexo-url-submission
 ```yaml
 url_submission:
    enable: true
+   proxy: #'http://127.0.0.1:1080' # Proxy address for google submission
    type: 'latest' # latest or all( latest: modified pages; all: posts & pages)
    channels: # included channels are `baidu`, `google`, `bing`, `shenma`
      baidu:
