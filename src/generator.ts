@@ -33,6 +33,10 @@ export default (locals: Hexo.Site, hexo: Hexo): Hexo.extend.Generator.Return => 
         const pageFile = fs.statSync(pathFn.join(source_dir, post.source))
         return new Date(pageFile.mtime).setHours(0, 0, 0, 0) === new Date().setHours(0, 0, 0, 0)
       })
+      if (urls.length == 0) {
+        log.info(projectPrefix.concat("The url_submission type is set to 'latest', but there is no pages updated today!"))
+        log.info(projectPrefix.concat("Therefore submit_url.txt will not be generated."))
+      }
     } catch (error: any) {
       log.error(projectPrefix.concat("Read file meta failed, error is: ", error.message))
       return { path: '', data: '' }
