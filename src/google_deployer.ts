@@ -1,7 +1,7 @@
 import pathFn from 'path'
 import { JWT as googleOauth, Credentials as googleAuthCredentials } from 'google-auth-library'
 import Axios from 'axios'
-import HttpsProxyAgent from "https-proxy-agent"
+import { HttpsProxyAgent } from "https-proxy-agent"
 import * as fs from "hexo-fs"
 
 import { GoogleKeys } from './utils/interface'
@@ -39,7 +39,7 @@ export const deployer = async (args: Hexo) => {
   }
 
   if (proxy !== '') {
-    let httpsAgent = HttpsProxyAgent(proxy)
+    let httpsAgent = new HttpsProxyAgent(proxy)
     axios = Axios.create({
       proxy: false,
       httpsAgent
@@ -111,6 +111,7 @@ export const deployer = async (args: Hexo) => {
   } catch (error: any) {
     log.error(logPrefix.concat('Submit to google engine error: \x1b[31m', error, '\x1b[39m'))
   }
+}
 
 const randomRangeNumber = (minNumber: number, maxNumber: number) => {
   let range = maxNumber - minNumber
